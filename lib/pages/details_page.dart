@@ -341,6 +341,7 @@ void confirmReservation({required Function execute, required Trajet trajet}) {
   Get.snackbar('Reservation Ajouté', 'Votre reservation a bien été ajouté',
       // colorText: textColor,
       // showProgressIndicator : true,
+      duration: const Duration(seconds: 2),
       overlayBlur: 15,
       backgroundColor: Colors.grey,
       icon: const Icon(CupertinoIcons.alarm));

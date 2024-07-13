@@ -170,7 +170,7 @@ class _TrajetSectionState extends State<TrajetSection>
               Padding(
                 padding: const EdgeInsets.only(top: 3, bottom: 3, left: 10),
                 child: Container(
-                  color: AppTheme.black,
+                  color: textColor ,
                   width: 1,
                   height: 15,
                 ),
@@ -202,7 +202,7 @@ class _TrajetSectionState extends State<TrajetSection>
                     style: AppTheme.textStyle(
                         color: textColor, fontWeight: FontWeight.w500)),
                 Text(
-                  '${widget.trajet.price}XAF',
+                  '${widget.trajet.price} XAF',
                   style: AppTheme.textStyle(
                       color: textColor, fontWeight: FontWeight.w500),
                 )
