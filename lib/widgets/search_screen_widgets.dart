@@ -1,15 +1,9 @@
-import 'dart:math' as math;
-
-import 'package:cars_trajets/entities/theme_app.dart';
 import 'package:cars_trajets/pages/details_page.dart';
 import 'package:cars_trajets/theme/app_theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
 import '../entities/trajet.dart';
 import '../provider/theme_provider.dart';
 

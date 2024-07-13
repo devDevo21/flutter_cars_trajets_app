@@ -1,10 +1,7 @@
 import 'package:cars_trajets/provider/theme_provider.dart';
 import 'package:cars_trajets/theme/app_theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-
 import '../entities/trajet.dart';
 import '../pages/details_page.dart';
 
@@ -14,7 +11,6 @@ class Reservation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color textColor = context.watch<CustomTheme>().textColor;
-    Color colorTheme = context.watch<CustomTheme>().colorTheme;
     Color thirdColor = context.watch<CustomTheme>().thirdColor;
     return Container(
       width: double.infinity,
@@ -46,7 +42,7 @@ class Reservation extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10),
                       child: Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Minicard(content: trajet.modelCar),
