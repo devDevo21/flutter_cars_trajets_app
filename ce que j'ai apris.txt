@@ -1,0 +1,13 @@
+hight : la hauteur de chaque caractere
+
+Bouncing Scroll Physics dans SingleChildScrollView
+
+le text dans le column va automatiquement a la ligne s'il deborde la maxWidth
+
+SizedBox.expand()
+
+Get.snackbar()
+
+Get.to()
+
+Get.back()
