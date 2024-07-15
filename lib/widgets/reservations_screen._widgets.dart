@@ -1,5 +1,6 @@
 import 'package:cars_trajets/provider/theme_provider.dart';
 import 'package:cars_trajets/theme/app_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../entities/trajet.dart';
@@ -17,84 +18,90 @@ class Reservation extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.directions_walk,
-                          color: thirdColor,
-                        ),
-                        Text(
-                          trajet.start,
-                          style: AppTheme.textStyle(
-                              fontSize: TextSize.sm, color: textColor),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Row(
+          SizedBox(
+            height: 70,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const SizedBox(
-                            width: 10,
+                          Icon(
+                            Icons.directions_walk,
+                            color: thirdColor,
                           ),
-                          Minicard(content: trajet.modelCar),
+                          Text(
+                            trajet.start,
+                            style: AppTheme.textStyle(
+                                fontSize: TextSize.sm, color: textColor),
+                          )
                         ],
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Minicard(content: trajet.modelCar),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 20),
+                Expanded(
                   child: SizedBox(
-                    height: 55,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                    height: double.infinity,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Center(
-                            child: Text(
-                          ' - - - - - - - - - - ',
+                        Text(
+                          ' - - - - - ',
                           style: TextStyle(color: textColor),
-                        )),
+                        ),
                       ],
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.fmd_good,
-                          color: AppTheme.primaryColor,
-                        ),
-                        Text(trajet.end,
-                            style: AppTheme.textStyle(
-                                color: textColor, fontSize: TextSize.sm))
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Text('${trajet.price}XOF',
-                        style: AppTheme.textStyle(
-                          color: textColor,
-                        ))
-                  ],
-                ),
-              )
-            ],
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.fmd_good,
+                            color: AppTheme.primaryColor,
+                          ),
+                          Text(trajet.end,
+                              style: AppTheme.textStyle(
+                                  color: textColor, fontSize: TextSize.sm))
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Text('${trajet.price}XOF',
+                          style: AppTheme.textStyle(
+                            color: textColor,
+                          ))
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ],
       ),

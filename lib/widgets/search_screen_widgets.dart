@@ -1,6 +1,7 @@
 import 'package:cars_trajets/pages/details_page.dart';
 import 'package:cars_trajets/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -56,8 +57,10 @@ class _TrajetsListState extends State<TrajetsList> {
         padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
         child: Row(
           children: [
-            Expanded(child: CardImage(imagePaht: widget.trajet.imageCarPath)),
-            Expanded(child: TrajetSection(trajet: widget.trajet))
+            Expanded(
+                flex: 2,
+                child: CardImage(imagePaht: widget.trajet.imageCarPath)),
+            Expanded(flex: 3, child: TrajetSection(trajet: widget.trajet))
           ],
         ),
       ),
@@ -160,11 +163,12 @@ class _TrajetSectionState extends State<TrajetSection>
             ),
           ]),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 3, bottom: 3, left: 10),
                 child: Container(
-                  color: textColor ,
+                  color: textColor,
                   width: 1,
                   height: 15,
                 ),
@@ -189,8 +193,10 @@ class _TrajetSectionState extends State<TrajetSection>
             height: 10,
           ),
           SizedBox(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            width: MediaQuery.of(context).size.width / 2,
+            child: Wrap(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              alignment: WrapAlignment.spaceBetween,
               children: [
                 Text(widget.trajet.modelCar,
                     style: AppTheme.textStyle(

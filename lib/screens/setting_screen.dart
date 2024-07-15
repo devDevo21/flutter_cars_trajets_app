@@ -16,6 +16,7 @@ class SettingScreen extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar.medium(
+          automaticallyImplyLeading: false,
           backgroundColor: colorTheme,
           title: Text(
             'Reglages',

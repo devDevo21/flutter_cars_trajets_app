@@ -5,7 +5,6 @@ import 'package:cars_trajets/theme/app_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../widgets/search_screen_widgets.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -23,9 +22,12 @@ class SearchScreen extends StatelessWidget {
           color: textColor,
         ),
         actions: [
-          Icon(
-            CupertinoIcons.person,
-            color: textColor,
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              CupertinoIcons.person,
+              color: textColor,
+            ),
           )
         ],
         backgroundColor: Colors.transparent,
