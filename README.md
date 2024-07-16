@@ -1,16 +1,13 @@
 # cars_trajets
 
-A new Flutter project.
+A basic car Trajets app build using flutter
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Shots
+ <div class="row">
+  <div class="column">
+   <img src="assets/screenshoot/Screenshot_1721122523.png"  height="400"/>
+    <img src="assets/screenshoot/Screenshot_1721122581.png" height="400"/>
+    <img src="assets/screenshoot/Screenshot_1721122668.png" height="400"/>
+    <img src="assets/screenshoot/Screenshot_1721122539.png" height="400"/>
+   </div>
+</div>
