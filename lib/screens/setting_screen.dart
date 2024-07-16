@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../provider/theme_provider.dart';
+import '../widgets/setting_screen_widget.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -11,7 +12,6 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Color textColor = context.watch<CustomTheme>().textColor;
     Color colorTheme = context.watch<CustomTheme>().colorTheme;
-    bool theme = context.watch<CustomTheme>().theme;
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
@@ -112,51 +112,11 @@ class SettingScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              SwitchListTile.adaptive(
-                  title: Text(
-                    context.watch<CustomTheme>().theme
-                        ? 'Mode Sombre'
-                        : 'Mode clair',
-                    style: AppTheme.textStyle(
-                        color: textColor, fontSize: TextSize.md),
-                  ),
-                  value: theme,
-                  onChanged: (theme) {
-                    context.read<CustomTheme>().toggleTheme(isDark: theme);
-                  })
+              const ToggleThemeMode()
             ]),
           ),
         )
       ],
     );
   }
-}
-
-Widget customListTile(
-    Widget leading, String title, IconData icon, BuildContext context) {
-  Color textColor = context.watch<CustomTheme>().textColor;
-  return ListTile(
-    shape: const RoundedRectangleBorder(),
-    leading: leading,
-    title: Text(
-      title,
-      style: AppTheme.textStyle(color: textColor),
-    ),
-    trailing: Icon(
-      icon,
-      color: Colors.grey,
-    ),
-  );
-}
-
-Widget leading(IconData icon, Color color) {
-  return Container(
-    padding: const EdgeInsets.all(4),
-    decoration: BoxDecoration(
-        color: color, borderRadius: const BorderRadius.all(Radius.circular(7))),
-    child: Icon(
-      icon,
-      color: Colors.white,
-    ),
-  );
 }

@@ -1,38 +1,10 @@
 import 'package:cars_trajets/pages/details_page.dart';
 import 'package:cars_trajets/theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../entities/trajet.dart';
 import '../provider/theme_provider.dart';
-
-class Hearder extends StatelessWidget {
-  const Hearder({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    Color textColor = context.watch<CustomTheme>().textColor;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Reservez le trajet qui vous arrange",
-          style: AppTheme.textStyle(
-              color: textColor,
-              fontSize: TextSize.xl,
-              fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 8.h),
-        Text(
-          'Choisissez parmis les trajets suivant celui qui va vers votre direction',
-          style: AppTheme.textStyle(color: textColor, fontSize: TextSize.sm),
-        )
-      ],
-    );
-  }
-}
 
 class TrajetsList extends StatefulWidget {
   const TrajetsList({super.key, required this.trajet});

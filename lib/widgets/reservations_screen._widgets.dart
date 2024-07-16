@@ -1,6 +1,5 @@
 import 'package:cars_trajets/provider/theme_provider.dart';
 import 'package:cars_trajets/theme/app_theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../entities/trajet.dart';
@@ -105,6 +104,53 @@ class Reservation extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ShowMessageForEmptyReservationList extends StatelessWidget {
+  const ShowMessageForEmptyReservationList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Color thirdColor = context.watch<CustomTheme>().thirdColor;
+    Color textColor = context.watch<CustomTheme>().textColor;
+
+    return Column(
+      children: [
+        SizedBox(
+          height: MediaQuery.of(context).size.height / 4,
+        ),
+        Icon(
+          Icons.error,
+          size: 45,
+          color: thirdColor,
+        ),
+        Text(
+          'Aucune Reservation',
+          style: AppTheme.textStyle(
+            fontSize: TextSize.lg,
+            color: textColor,
+          ),
+        ),
+        Text('Nous n\'avons trouvé aucune reservation',
+            style: AppTheme.textStyle(fontSize: TextSize.sm, color: textColor))
+      ],
+    );
+  }
+}
+
+class ShowReservationsList extends StatelessWidget {
+  const ShowReservationsList({super.key, required this.reservationList});
+  final List<Trajet> reservationList;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ...reservationList.map((trajet) => Reservation(
+              trajet: trajet,
+            )),
+      ],
     );
   }
 }

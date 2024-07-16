@@ -14,7 +14,6 @@ class ReservationsScreen extends StatelessWidget {
     final List<Trajet> reservationList = context.watch<Car>().reservationList;
     Color textColor = context.watch<CustomTheme>().textColor;
     Color colorTheme = context.watch<CustomTheme>().colorTheme;
-    Color thirdColor = context.watch<CustomTheme>().thirdColor;
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
@@ -36,36 +35,11 @@ class ReservationsScreen extends StatelessWidget {
             children: [
               Visibility(
                   visible: reservationList.isEmpty,
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height / 4,
-                      ),
-                      Icon(
-                        Icons.error,
-                        size: 45,
-                        color: thirdColor,
-                      ),
-                      Text(
-                        'Aucune Reservation',
-                        style: AppTheme.textStyle(
-                          fontSize: TextSize.lg,
-                          color: textColor,
-                        ),
-                      ),
-                      Text('Nous n\'avons trouvé aucune reservation',
-                          style: AppTheme.textStyle(
-                              fontSize: TextSize.sm, color: textColor))
-                    ],
-                  )),
+                  child: const ShowMessageForEmptyReservationList()),
               Visibility(
                   visible: reservationList.isNotEmpty,
-                  child: Column(
-                    children: [
-                      ...reservationList.map((trajet) => Reservation(
-                            trajet: trajet,
-                          )),
-                    ],
+                  child: ShowReservationsList(
+                    reservationList: reservationList,
                   ))
             ],
           ),
@@ -74,20 +48,3 @@ class ReservationsScreen extends StatelessWidget {
     );
   }
 }
-
-
-// Padding(
-//         padding: const EdgeInsets.only(top: 15, left: 10, right: 10),
-//         child: Column(
-//           children: [
-//             Text(
-//               'Mes Reservations',
-//               style: AppTheme.textStyle(
-//                   fontWeight: FontWeight.bold, fontSize: TextSize.xl, color: textColor),
-//             ),
-//             ...reservationList.map((trajet) => Reservation(
-//                   trajet: trajet,
-//                 ))
-//           ],
-//         ),
-//       ),

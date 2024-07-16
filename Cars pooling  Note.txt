@@ -1,0 +1,21 @@
+ce que j'ai apris sur le clone du projet cars pooling :
+
+
+- La navigation avec le package Get
+    Get.to()
+    Get.back()
+
+- Pop Up notification avec Get
+    Get.snackbar()
+
+- donner une hauteur de caractere avec le params height de TextStyle
+    height : la hauteur de chaque caractere
+
+- CustomScroolView()
+   physics : BouncingScrollPhysics pour adapter un scroll souple
+
+- SliverAppBar.medium()
+    pour permettre au title de la appBar disparaitre et de reaparaitre au scrool
+
+- le text dans le column va automatiquement a la ligne s'il deborde la maxWidth
+SizedBox.expand()

@@ -42,7 +42,6 @@ class SearchScreen extends StatelessWidget {
           padding: const EdgeInsets.only(top: 15, left: 10, right: 10),
           child: Column(
             children: [
-              // const Hearder(),
               ...trajetsList.map((trajet) => TrajetsList(trajet: trajet)),
             ],
           ),
